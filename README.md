@@ -2,6 +2,24 @@
 
 Aplicação web para estimar a idade aparente em uma foto e gerar um meme em estilo cartoon. O usuário entra com Google, captura uma foto pela webcam ou envia uma imagem, e pode baixar o resultado e gerenciar seu histórico.
 
+
+# Tela inicial
+<div>
+    <img src="./imagens/foto 1.jpg" alt="index da pagina" width="260">
+</div>
+
+# captura para registrar a foto
+
+<div>
+    <img src="./imagens/foto 2.jpg" alt="index da pagina" width="260">
+</div>
+
+# área de histórico de memes
+
+<div>
+    <img src="./imagens/foto 3.jpg" alt="index da pagina" width="260">
+</div>
+
 ## Como funciona
 
 1. A estimativa de idade roda localmente no navegador, usando TensorFlow.js e os modelos de detecção de rosto e idade incluídos no frontend. A inferência de idade não chama Hugging Face e não consome créditos de API.
