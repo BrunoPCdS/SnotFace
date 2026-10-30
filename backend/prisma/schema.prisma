@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  googleId  String   @unique
+  email     String   @unique
+  name      String?
+  picture   String?
+  createdAt DateTime @default(now())
+  scans     Scan[]
+}
+
+model Scan {
+  id            Int      @id @default(autoincrement())
+  userId        Int
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  age           Int?
+  imageData     Bytes
+  imageMimeType String   @default("image/jpeg")
+  memeData      Bytes?
+  memeMimeType  String?
+  createdAt     DateTime @default(now())
+  expiresAt     DateTime
+
+  @@index([userId, expiresAt])
+}
